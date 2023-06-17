@@ -125,8 +125,14 @@ table {
   border-spacing: 0;
 }
 
-/* Styles */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+/* Styles */
 :root {
   --bg-primary: #111111;
   --layout-horizontal-padding: 0 1rem;
@@ -134,11 +140,15 @@ table {
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: var(--bg-primary);
   display: flex;
   flex-direction: column;
+}
+
+main {
+  padding: var(--layout-horizontal-padding);
 }
 
 .logo {
@@ -179,6 +189,11 @@ body {
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
+.banner__title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
 .btn-container {
   display: flex;
   gap: 1rem;
@@ -194,13 +209,40 @@ body {
   padding: 0.5rem 2rem;
 }
 
-.banner-title {
-  font-size: 36px;
-  font-weight: bold;
-}
-
 .btn:hover {
   color: #000;
   background-color: #e6e6e6;
   transition: all 0.2s;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.section__title {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.poster-list {
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  padding: 2rem 0;
+  flex-direction: column;
+}
+
+.poster-list__item {
+  flex: 1;
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
 }
