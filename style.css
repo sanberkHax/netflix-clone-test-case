@@ -139,6 +139,22 @@ table {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* sm */
+@media (min-width: 640px) {
+}
+
+/* md */
+@media (min-width: 768px) {
+}
+
+/* lg */
+@media (min-width: 1024px) {
+}
+
+/* xl */
+@media (min-width: 1280px) {
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -149,6 +165,9 @@ body {
 
 main {
   padding: var(--layout-horizontal-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .logo {
@@ -169,26 +188,33 @@ main {
 
 .banner {
   position: relative;
-  height: 15rem;
+  min-height: 15rem;
   background-image: url('images/banner.jpg');
   background-size: cover;
   background-position: center center;
   color: white;
   object-fit: contain;
-  display: flex;
   padding: var(--layout-horizontal-padding);
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
   padding-top: 3rem;
+  padding-bottom: 2rem;
   -webkit-mask-image: linear-gradient(
     to bottom,
     var(--bg-primary) 85%,
     transparent 100%
   );
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  display: flex;
+  align-items: center;
 }
-
+.banner__container {
+  gap: 1rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .banner__title {
   font-size: 36px;
   font-weight: bold;
@@ -223,6 +249,7 @@ main {
   width: 100%;
 }
 .section__title {
+  text-align: center;
   color: white;
   font-weight: bold;
   font-size: 24px;
@@ -233,16 +260,45 @@ main {
   align-items: center;
   gap: 10px;
   display: flex;
-  padding: 2rem 0;
+  padding: 20px;
   flex-direction: column;
+  width: 100%;
 }
 
 .poster-list__item {
-  flex: 1;
+  /* flex: 1; */
+  min-width: 150px;
 }
 
 .poster {
   width: 100%;
   height: auto;
   max-width: 200px;
+}
+
+@media (min-width: 640px) {
+  .poster-list {
+    overflow-x: auto;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+  .banner {
+    min-height: 20rem;
+  }
+  .banner__container {
+    align-items: start;
+    width: 50%;
+  }
+  .section {
+    align-items: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    min-height: 30rem;
+  }
+  .banner__container {
+    width: 25%;
+  }
 }
