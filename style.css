@@ -183,7 +183,7 @@ main {
   color: white;
   object-fit: contain;
   padding: var(--layout-horizontal-padding);
-  padding-top: 3rem;
+  padding-top: 5rem;
   padding-bottom: 2rem;
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -207,6 +207,7 @@ main {
 }
 .banner__title {
   font-size: 3rem;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -278,6 +279,9 @@ main {
     justify-content: flex-start;
     flex-direction: row;
   }
+  .banner__title {
+    text-align: start;
+  }
   .banner {
     min-height: 20rem;
   }
@@ -296,5 +300,11 @@ main {
   }
   .banner__container {
     width: 25%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .poster-list {
+    justify-content: space-around;
   }
 }
